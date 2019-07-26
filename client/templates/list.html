@@ -1,0 +1,40 @@
+<div class="panel panel-default" ng-init="getEmployees()">
+	<div class="panel-heading">
+	  <p class="panel-title"><span style="color:#5bc0de;" 
+class="glyphicon glyphicon-list"> </span> Employees List</p>
+	</div>
+	<div class="panel-body">
+
+
+		<table class="table table-striped">
+			<thead>
+			<tr>
+			  <th>Name</th>
+<!--			  <th>Department</th>-->
+<!--			  <th>Location</th>-->
+			  <th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="employee in employees">
+			  <td>
+
+				  <div class="block_image_news width_common">
+					  <div class="thumb"> <a href="https://ione.vnexpress.net/tin-tuc/thoi-trang/lam-dep/4-kieu-toc-mai-sao-han-chuong-nhat-mua-he-3957244.html" onclick="ga('t0.send', 'Folder', 'Click Tin bất kỳ', 'List tin');"><img alt="4 kiểu tóc mái sao Hàn chuộng nhất mùa hè" src="https://i-ione.vnecdn.net/2019/07/24/top-1563939540-4502-1563939761_r_300x180.jpg" data-original="https://i-ione.vnecdn.net/2019/07/24/top-1563939540-4502-1563939761_r_300x180.jpg" class="vne_lazy_image lazyLoaded" data-was-processed="true"></a> </div>
+					  <div class="title_news"><a class="txt_link" href="https://ione.vnexpress.net/tin-tuc/thoi-trang/lam-dep/4-kieu-toc-mai-sao-han-chuong-nhat-mua-he-3957244.html" onclick="ga('t0.send', 'Folder', 'Click Tin bất kỳ', 'List tin');">{{employee.title}}<span class="no_wrap"><img src="https://s.vnecdn.net/ione/i/v10/graphics/img_blank.gif" alt="Icon" class="icon_content icon_title_0"></span></a> <a class="icon_commend" href="https://ione.vnexpress.net/tin-tuc/thoi-trang/lam-dep/4-kieu-toc-mai-sao-han-chuong-nhat-mua-he-3957244.html#box_comment" style="white-space: nowrap; cursor: pointer; display: none;"><span class="txt_num_comment widget-comment-3957244-1"><img class="icon_content icon_title_coment" alt="Icon Comment" src="https://s.vnecdn.net/ione/i/v10/graphics/img_blank.gif">&nbsp;<label class="total"></label></span></a></div>
+					  <div class="block_timer txt_666 txt_12 space_bottom_5">3:00 PM | 24/7</div>
+					  <div class="news_lead">{{employee.description}}</div>
+				  </div>
+			  </td>
+<!--			  <td>{{ employee.dept }}</td>-->
+<!--			  <td>{{ employee.area }}</td>-->
+			  <td> 
+			    <a href="#/employees/{{employee._id}}/show" class="btn btn-info"> Show  </a>
+			    <a href="#/employees/{{employee._id}}/edit" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Edit  </a>
+			  	<a ng-click="deleteEmployee(employee._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Delete </a>
+			  </td>
+			</tr>
+			</tbody>
+		</table>		
+    </div>
+</div>
